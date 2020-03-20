@@ -1,7 +1,6 @@
 <template>
   <div class="home">
 
-
   </div>
 </template>
 
@@ -9,9 +8,10 @@
 // @ is an alias to /src
 //import Home from "@/components/Home.vue";
 
-//console.log(data);
 export default {
   name: "Home",
-
+  /*components: {
+    Home
+  }*/
 };
 </script>
