@@ -40,6 +40,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* For Mobile */
+@media screen and (max-width: 540px) {
+	li span {
+		width: 75%;
+	}
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px){
+	li span {
+		width: 400px;
+	}
+}
 .subtract {
 	display: inline-block;
 	padding: 0px 10px;
@@ -82,9 +95,7 @@ li span {
 	display: flex;
     align-items: center;
 	justify-content: space-between;
-	width: fit-content;
 	cursor: pointer;
-	width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 }

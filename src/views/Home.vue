@@ -39,6 +39,7 @@ ul {
 	margin-right: auto;
 	text-align: left;
 	width: 80%;
+	margin-bottom: 80px;
 }
 li {
 	margin-bottom: 10px;

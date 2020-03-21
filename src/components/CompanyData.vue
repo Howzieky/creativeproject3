@@ -32,14 +32,31 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* For Mobile */
+@media screen and (max-width: 540px) {
+    ul {
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px){
+    ul {
+	    flex-wrap: wrap;
+	    justify-content: space-around;
+    }
+	li {
+		width: 25%;
+	}
+}
+
 ul {
-  //margin-left: 10%;
   list-style-type: none;
   padding: 0;
   text-align: left;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   overflow-y: scroll;
   background-color: #cccccc;
   margin-bottom: 0px;
@@ -47,11 +64,8 @@ ul {
 li {
   background-color: #FFFFFF88;
   box-shadow: 0 0 10px #ffffff;
-  //display: inline-block;
   margin: 10px 10px;
-  //padding: 10px;
   text-align: center;
-  width: 25%;
 }
 a {
   color: #42b983;

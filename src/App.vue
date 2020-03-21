@@ -7,7 +7,7 @@
     </div>
     <router-view />
 	<footer id="footer">
-		Github
+		<a href="https://github.com/Howzieky/creativeproject3.git">Github</a>
 	</footer>
   </div>
 </template>
@@ -32,7 +32,10 @@ body {
 #nav a {
   font-weight: bold;
   color: #c0c0c0;
-  text-decoration: none;
+}
+
+a {
+	text-decoration: none;
 }
 
 footer {

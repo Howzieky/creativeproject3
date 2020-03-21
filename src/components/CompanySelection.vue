@@ -35,27 +35,46 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@media screen and (max-width: 540px) {
+	.companyButtons {
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+	.companyButton {
+		margin-bottom: 10px;
+	}
+}
+@media screen and (min-width: 541px) {
+	.companyButtons {
+		justify-content: space-around;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+		max-width: 90%;
+	}
+	.companyButton {
+		width: 15%;
+	}
+}
+
 .selected {
 	border: 2px solid white;
     box-shadow: 0 0 15px #88aadd;
+	background-color: #CDEFFF !important;
 }
 .companyButton:not(.selected) {
 	border: 2px solid white;
 }
 .companyButtons {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 50px;
-	max-width: 90%;
 	display: flex;
-	justify-content: space-around;
 }
 .companyButton {
 	background-color: lightblue;
 	padding: 5px 20px 5px 20px;
 	border-radius: 10px;
 	cursor: pointer;
-	width: 15%;
 }
 h3 {
   margin: 40px 0 0;
