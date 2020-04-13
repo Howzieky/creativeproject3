@@ -17,16 +17,15 @@
 
 <script>
 export default {
-  name: "CompanyData",
-  props: {
-    companies: Array,
-	selectedCompany: Number
-  },
-  mounted() {
-	document.getElementById("viewList").style.height = window.innerHeight - document.getElementById("viewList").offsetTop - document.getElementById("footer").offsetHeight + "px";
-  },
-  methods: {
-  }
+    name: "CompanyData",
+    props: {
+        companies: Array,
+        selectedCompany: Number
+    },
+    mounted() {
+        document.getElementById("viewList").style.height = window.innerHeight - document.getElementById("viewList").offsetTop - document.getElementById("footer").offsetHeight + "px";
+    },
+    methods: {}
 };
 </script>
 
@@ -44,8 +43,8 @@ export default {
 /* For Tablets */
 @media screen and (min-width: 540px){
     ul {
-	    flex-wrap: wrap;
-	    justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 	li {
 		width: 25%;

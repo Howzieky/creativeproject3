@@ -2,34 +2,34 @@
 	<div id="companyData">
 		<h2>Select a Company</h2>
 		<div class="companyButtons">
-  			<div class="companyButton" v-for="company in companies" :key="company.name" @click="select(company.id)" :id=htmlID(company.id)>
-				{{company.name}}
-  			</div>
+            <div class="companyButton" v-for="company in companies" :key="company.name" @click="select(company.id)" :id=htmlID(company.id)>
+                {{company.name}}
+            </div>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-  	name: "CompanySelection",
-  	props: {
-    	companies: Array,
-		selectedCompany: Number
-  	},
-    mounted() {
-	console.log()
-    	document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
+    name: "CompanySelection",
+    props: {
+        companies: Array,
+        selectedCompany: Number
     },
-	methods: {
-		select(id) {
-	  		document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
-	  		this.$root.$data.selectedCompany = id;
-	  		document.getElementById("button" + id).classList.toggle("selected");
-		},
-		htmlID(id) {
-			return "button" + id;
-		},
-	}
+    mounted() {
+        console.log()
+        document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
+    },
+    methods: {
+        select(id) {
+            document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
+            this.$root.$data.selectedCompany = id;
+            document.getElementById("button" + id).classList.toggle("selected");
+        },
+        htmlID(id) {
+            return "button" + id;
+        },
+    }
 }
 </script>
 

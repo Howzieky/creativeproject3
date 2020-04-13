@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/view">View Data</router-link> |
-	  <router-link to="/edit">Edit Data</router-link>
+      <router-link to="/edit">Edit Data</router-link>
     </div>
     <router-view />
 	<footer id="footer">
@@ -44,8 +44,8 @@ footer {
 	background-color: black;
 	padding: 20px 0px;
 	position: fixed;
-  	left: 0;
-  	bottom: 0;
+    left: 0;
+    bottom: 0;
 }
 
 #nav a.router-link-exact-active {
