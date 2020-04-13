@@ -1,10 +1,13 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import mock from "./mock-data.js";
+//import axios from 'axios';
+
+//import mock from "./mock-data.js";
+
 
 let data = {
-  companies: mock,
+  companies: {},
   selectedCompany: 0
 }
 

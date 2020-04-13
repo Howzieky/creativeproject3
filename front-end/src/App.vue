@@ -3,14 +3,38 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/view">View Data</router-link> |
-      <router-link to="/edit">Edit Data</router-link>
+      <router-link to="/edit">Edit Data</router-link> |
+      <router-link to="/businesses">Manage Businesses</router-link>
     </div>
     <router-view />
 	<footer id="footer">
-		<a href="https://github.com/Howzieky/creativeproject3.git">Github</a>
+		<a href="https://github.com/Howzieky/creativeproject3/tree/creativeproject4">Github</a>
 	</footer>
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+
+
+export default {
+    name: "App",
+    async created() {
+        try {
+            let response = await axios.get("/businesses");
+            let data = {};
+            for (var i = 0; i < response.data.length; i++) {
+                data[response.data[i].id] = response.data[i];
+            }
+            this.$root.$data.companies = data;
+            return true;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+}
+
+</script>
 
 <style>
 body {

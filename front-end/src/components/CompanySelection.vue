@@ -2,6 +2,9 @@
 	<div id="companyData">
 		<h2>Select a Company</h2>
 		<div class="companyButtons">
+            <div class="companyButton newBtn" v-if="newCompanyBtn" @click="select(0)" id="button0">
+                Add New Business
+            </div>
             <div class="companyButton" v-for="company in companies" :key="company.name" @click="select(company.id)" :id=htmlID(company.id)>
                 {{company.name}}
             </div>
@@ -13,15 +16,14 @@
 export default {
     name: "CompanySelection",
     props: {
-        companies: Array,
-        selectedCompany: Number
+        selectedCompany: Number,
+        newCompanyBtn: Boolean
     },
     mounted() {
-        console.log()
         document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
     },
     methods: {
-        select(id) {
+        async select(id) {
             document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
             this.$root.$data.selectedCompany = id;
             document.getElementById("button" + id).classList.toggle("selected");
@@ -29,6 +31,19 @@ export default {
         htmlID(id) {
             return "button" + id;
         },
+    },
+    computed: {
+        companies() {
+            var list = [];
+            for (var company in this.$root.$data.companies) {
+
+                if (this.$root.$data.companies[company].id != 0) {
+                    
+                    list.push(this.$root.$data.companies[company])
+                }
+            }
+            return list;
+        }
     }
 }
 </script>
@@ -75,6 +90,14 @@ export default {
 	padding: 5px 20px 5px 20px;
 	border-radius: 10px;
 	cursor: pointer;
+}
+.newBtn {
+    background-color: lightgreen;
+}
+.newBtn.selected {
+    border: 2px solid white;
+    box-shadow: 0 0 15px green;
+	background-color: #b0ffb0 !important;
 }
 h3 {
   margin: 40px 0 0;
