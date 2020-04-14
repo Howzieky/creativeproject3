@@ -21,6 +21,9 @@ export default {
     },
     mounted() {
         document.getElementById("button" + this.selectedCompany).classList.toggle("selected");
+        this.$root.$on('selectCompanySelection', (id) => {
+            this.select(id)
+        })
     },
     methods: {
         async select(id) {
@@ -38,7 +41,7 @@ export default {
             for (var company in this.$root.$data.companies) {
 
                 if (this.$root.$data.companies[company].id != 0) {
-                    
+
                     list.push(this.$root.$data.companies[company])
                 }
             }

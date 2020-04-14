@@ -19,19 +19,29 @@ import axios from 'axios';
 
 export default {
     name: "App",
-    async created() {
-        try {
-            let response = await axios.get("/businesses");
-            let data = {};
-            for (var i = 0; i < response.data.length; i++) {
-                data[response.data[i].id] = response.data[i];
-            }
-            this.$root.$data.companies = data;
-            return true;
-        } catch (error) {
-            console.log(error);
-        }
+    async created () {
+        this.getBusinesses();
     },
+    mounted() {
+        this.$root.$on('callGetBusinesses', () => {
+            this.getBusinesses();
+        })
+    },
+    methods: {
+        async getBusinesses() {
+            try {
+                let response = await axios.get("/businesses");
+                let data = {};
+                for (var i = 0; i < response.data.length; i++) {
+                    data[response.data[i].id] = response.data[i];
+                }
+                this.$root.$data.companies = data;
+                return true;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
 }
 
 </script>
